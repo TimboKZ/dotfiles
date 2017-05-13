@@ -9,4 +9,13 @@ The following packages must be installed:
 * Vim
 * Node.js
 * NPM
-* i3-gaps
+* i3-gaps (with `i3status`)
+* Compton
+* `xfce4-screenshooter`
+* Rofi
+
+Required fonts:
+
+* Dina
+* FontAwesome (`fonts-font-awesome`)
+* Siji
