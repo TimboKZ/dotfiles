@@ -1,0 +1,3 @@
+#!/bin/bash
+cd "$HOME"
+bash "$HOME/.vim/bootstrap.sh"
