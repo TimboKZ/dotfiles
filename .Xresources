@@ -1,6 +1,6 @@
 URxvt*termName: rxvt-256color
-URxvt*font: -*-dina-medium-r-*-*-13-*-*-*-*-*-*-*
 URxvt*scrollTtyKeypress: true
+URxvt*font: -*-dina-medium-r-*-*-13-*-*-*-*-*-*-*
 
 URxvt.letterSpace: 0
 URxvt.lineSpace: 2

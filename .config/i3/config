@@ -11,8 +11,12 @@
 
 # gaps and bg fix
 gaps inner 30
-#for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 #hide_edge_borders both
+
+exec --no-startup-id sh ~/.fehbg 
+exec --no-startup-id polybar example
+exec --no-startup-id bash ~/.config/i3/fonts
 
 set $mod Mod4
 
@@ -32,14 +36,14 @@ bindsym $mod+Return exec "urxvt"
 #bindsym $mod+c exec "google-chrome --high-dpi-support=1 --force-device-scale-factor=1"
 bindsym $mod+c exec "firefox"
 bindsym Print exec "xfce4-screenshooter -f"
-bindsym Print+Shift exec "xfce4-screenshooter -r"
+bindsym Print+shift exec "xfce4-screenshooter -r"
 
 
 # kill focused window
 bindsym $mod+w kill
 
 # start program launcher
-bindsym $mod+Space exec "rofi -show run"
+bindsym $mod+space exec rofi -show run
 
 # change focus
 bindsym $mod+h focus left
@@ -141,12 +145,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
 
 # Compton
 exec --no-startup-id "compton -b"

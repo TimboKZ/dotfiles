@@ -9,6 +9,7 @@ The following packages must be installed:
 * Vim
 * Node.js
 * NPM
+* Fish shell with Oh My Fish
 * i3-gaps (with `i3status`)
 * Compton
 * `xfce4-screenshooter`

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+fonts="/usr/share/fonts/dina"
+
+for font in ${fonts}
+do
+    xset +fp ${font}
+    xset fp rehash
+done
