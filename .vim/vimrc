@@ -1,0 +1,124 @@
+" Basic config
+set nocompatible
+set number
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set ruler
+set backspace=start,eol,indent
+set autoread
+set t_Co=256
+syntax on
+
+" Yanking to system clipboard
+vnoremap <C-c> "*y
+vmap <Tab> >
+vmap <S-Tab> <
+nmap <Tab> >>
+nmap <S-Tab> <<
+map <F1> :NERDTreeToggle<CR>
+" Close buffer without closing window
+map <F2> :Bclose<CR>
+" Toggle comment
+map <F3> <leader>c<space>
+map <F4> :Gitv<CR>
+" Switching buffers
+execute "set <M-h>=\eh"
+execute "set <M-l>=\el"
+nnoremap <M-h> :bp<CR>
+nnoremap <M-l> :bn<CR>
+set pastetoggle=<F5>
+" Tab completion
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Vundle config
+filetype off 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+" PLUGINS SECTION START
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Reewr/vim-monokai-phoenix'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mattn/emmet-vim'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'ianks/vim-tsx'
+Plugin 'vim-scripts/cup.vim'
+Plugin 'rbgrouleff/bclose.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'artur-shaik/vim-javacomplete2'
+
+" PLUGINS SECTION END
+call vundle#end()
+filetype plugin indent on
+
+" NERDTree
+let NERDTreeShowHidden=1
+
+" Colourscheme
+colorscheme monokai-phoenix
+hi Normal ctermbg=none
+
+" File type -> syntax associations
+autocmd BufNewFile,BufRead *.cup set syntax=cup
+
+" Airline config
+set laststatus=2 " Make airline always visible
+let g:airline#extensions#tabline#enabled = 1 " Enable the buffer view
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename for buffers
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▒'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '▒'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+
+" Syntastic config
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
+" neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#auto_completion_start_length = 1
+let g:neocomplete#sources#buffer#cache_limit_size = 50000
+let g:neocomplete#data_directory = $HOME.'/.vim/cache/noecompl'
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 2
+let g:neocomplete#sources#omni#input_patterns = {}
+let g:neocomplete#sources#omni#input_patterns.java = '\h\w*\.\w*'
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+\]
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
