@@ -11,7 +11,7 @@ The following packages must be installed:
 * NPM
 * Fish shell with Oh My Fish
 * i3-gaps (with `i3status`)
-* Compton
+* Compton (optional)
 * `xfce4-screenshooter`
 * Rofi
 
