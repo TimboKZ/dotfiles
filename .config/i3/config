@@ -14,6 +14,7 @@ gaps inner 30
 for_window [class=".*"] border pixel 2
 #hide_edge_borders both
 
+exec --no-startup-id nm-applet
 exec --no-startup-id sh ~/.fehbg 
 exec --no-startup-id polybar example
 exec --no-startup-id bash ~/.config/i3/fonts
@@ -147,5 +148,5 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Compton
-exec --no-startup-id "compton -b"
+#exec --no-startup-id "compton -b"
 
