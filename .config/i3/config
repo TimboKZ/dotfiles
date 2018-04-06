@@ -15,7 +15,7 @@ for_window [class=".*"] border pixel 2
 #hide_edge_borders both
 
 exec --no-startup-id nm-applet
-#exec --no-startup-id sh ~/.fehbg 
+exec --no-startup-id sh ~/.fehbg 
 exec --no-startup-id polybar example
 exec --no-startup-id bash ~/.config/i3/fonts
 
@@ -34,8 +34,8 @@ floating_modifier $mod
 bindsym $mod+Return exec "urxvt"
 
 # run programs
-#bindsym $mod+c exec "google-chrome --high-dpi-support=1 --force-device-scale-factor=1"
-bindsym $mod+c exec "firefox"
+bindsym $mod+c exec "google-chrome --high-dpi-support=1 --force-device-scale-factor=1"
+#bindsym $mod+c exec "firefox"
 bindsym Print exec "xfce4-screenshooter -f"
 bindsym Print+shift exec "xfce4-screenshooter -r"
 
