@@ -13,10 +13,12 @@ The following packages must be installed:
 * i3-gaps (with `i3status`)
 * Compton (optional)
 * `xfce4-screenshooter`
-* Rofi
+* `rofi`
+* `feh` (need to run `feh` once before running i3 to generate `~/.fehbg`)
+* [polybar](https://github.com/jaagr/polybar)
 
 Required fonts:
 
-* Dina
+* Dina ([instructions](https://web.archive.org/web/20180406041154/http://notepad2.blogspot.com/2010/08/install-dina-programming-font-on-ubuntu.html), font archive is in `.yadm/`)
 * FontAwesome (`fonts-font-awesome`)
-* Siji
+* [Siji](https://github.com/stark/siji)
