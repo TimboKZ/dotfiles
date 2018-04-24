@@ -30,14 +30,14 @@ font -*-dina-medium-r-normal--13-*-*-*-*-*-*-*
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec "urxvt"
-
 # run programs
+bindsym $mod+Return exec "urxvt"
 bindsym $mod+c exec ~/.config/i3/launch-browser.sh
 bindsym --release Print exec "xfce4-screenshooter -f"
-bindsym --release Print+Shift exec "xfce4-screenshooter -r"
+bindsym --release Shift+Print exec "xfce4-screenshooter -r"
 
+# Switch layouts between RU and US
+exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
 
 # kill focused window
 bindsym $mod+w kill
