@@ -33,3 +33,4 @@ Optionally, you can install/use the following packages:
 * `feh` - can be used to set the wallpaper. When setting the wallpaper (e.g.
   `feh --bg-center image.png`), feh will create a `~/.fehbg` file. This file
   is automatically imported by i3 to set the wallpaper on startup.
+
