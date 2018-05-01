@@ -38,3 +38,7 @@ Plug 'lervag/vimtex'
 
 call plug#end()
 
+" Some vimtex features require Vim to be compiled with certain flags. This is
+" not always possible, so we just disable them.
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+
