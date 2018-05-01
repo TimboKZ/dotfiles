@@ -6,6 +6,10 @@ if [ -f ~/.fehbg ]; then
     sh ~/.fehbg
 fi
 
+## When launching `nautilus`, it also brings up the desktop icons, breaking i3.
+## Changing gsettings prevents this behaviour.
+gsettings set org.gnome.desktop.background show-desktop-icons false
+
 
 ## Initialise fonts (separate fonts with a space)
 fonts="/usr/share/fonts/dina"
