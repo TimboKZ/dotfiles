@@ -13,6 +13,11 @@ let g:tex_flavor='latex'
 set backspace=indent,eol,start
 
 
+" Plugins like gitgutter tend to be slower with other shells like fish, so
+" we'll force Vim/NeoVim to use bash.
+set shell=/bin/bash
+
+
 " Draw color column at 80 lines
 set colorcolumn=80
 highlight ColorColumn ctermbg=Black
