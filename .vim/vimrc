@@ -18,6 +18,10 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=Black
 
 
+" Make sure statusline is not inverted (to make it less intrusive)
+highlight StatusLine term=bold cterm=bold ctermfg=Black gui=bold
+
+
 " Enable line numbers and make them very dim
 set nu
 highlight LineNr ctermfg=black
