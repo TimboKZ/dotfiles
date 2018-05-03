@@ -35,6 +35,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
 
 call plug#end()
 
