@@ -13,7 +13,7 @@ dotfiles. It is recommended that you setup yadm (i.e. `yadm clone <this repo>`)
 after installing i3-gaps.
 
 * urxvt (`rxvt-unicode-256color`) - terminal emulator
-* Vim - text editor
+* [NeoVim](https://github.com/neovim/neovim) (Vim works too) - text editor
 * [fish](https://fishshell.com/) - shell
 * [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - fish plugin manager
 * Screenshooter (`xfce4-screenshooter`) - screenshot tool
@@ -24,7 +24,7 @@ after installing i3-gaps.
 Required fonts:
 
 * Dina ([instructions](https://shorturl.at/EKQZ0), font archive is in `.yadm/`)
-  - font, used in urxvt and polybar.
+- font, used in urxvt and polybar.
 * [Siji](https://github.com/stark/siji) - icons, used in polybar.
 * FontAwesome (`fonts-font-awesome`) - icons, used in polybar.
 
