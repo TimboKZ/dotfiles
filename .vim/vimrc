@@ -25,6 +25,15 @@ highlight ColorColumn ctermbg=Black
 
 " Make sure statusline is not inverted (to make it less intrusive)
 highlight StatusLine term=bold cterm=bold ctermfg=Black gui=bold
+highlight StatusLineNC term=none cterm=none ctermfg=Black gui=none
+
+
+" Check matching bracket highlighting
+hi MatchParen cterm=none ctermbg=magenta ctermfg=black
+
+
+" Set Search highlight color
+hi Search cterm=none ctermbg=black ctermfg=magenta
 
 
 " Enable line numbers and make them very dim
@@ -46,6 +55,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 call plug#end()
 
