@@ -24,16 +24,23 @@ highlight ColorColumn ctermbg=Black
 
 
 " Make sure statusline is not inverted (to make it less intrusive)
-highlight StatusLine term=bold cterm=bold ctermfg=Black gui=bold
-highlight StatusLineNC term=none cterm=none ctermfg=Black gui=none
+highlight StatusLine term=bold cterm=bold ctermfg=Black
+highlight StatusLineNC term=none cterm=none ctermfg=Black
 
 
 " Check matching bracket highlighting
-hi MatchParen cterm=none ctermbg=magenta ctermfg=black
+highlight MatchParen cterm=none ctermbg=magenta ctermfg=black
 
 
 " Set Search highlight color
-hi Search cterm=none ctermbg=black ctermfg=magenta
+highlight Search cterm=none ctermbg=black ctermfg=magenta
+
+
+" Change split separator symbol and color to make it less intrusive
+set fillchars=vert:┃
+set fillchars+=stl:━
+set fillchars+=stlnc:━
+highlight VertSplit cterm=none ctermbg=none ctermfg=white
 
 
 " Enable line numbers and make them very dim
@@ -59,6 +66,11 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
 call plug#end()
+
+
+" Set Ale color scheme
+highlight ALEError ctermbg=red
+
 
 " Some vimtex features require Vim to be compiled with certain flags. This is
 " not always possible, so we just disable them.
