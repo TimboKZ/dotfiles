@@ -33,8 +33,8 @@ floating_modifier $mod
 # run programs
 bindsym $mod+Return exec "urxvt"
 bindsym $mod+c exec ~/.config/i3/launch-browser.sh
-bindsym --release Print exec "xfce4-screenshooter -f"
-bindsym --release Shift+Print exec "xfce4-screenshooter -r"
+bindsym --release Print exec "shutter -f"
+bindsym --release Shift+Print exec "shutter -s"
 
 # Switch layouts between RU and US
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"

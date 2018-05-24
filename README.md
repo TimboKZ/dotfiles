@@ -16,10 +16,10 @@ after installing i3-gaps.
 * [NeoVim](https://github.com/neovim/neovim) (Vim works too) - text editor
 * [fish](https://fishshell.com/) - shell
 * [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - fish plugin manager
-* Screenshooter (`xfce4-screenshooter`) - screenshot tool
+* [Shutter](http://shutter-project.org/) (`shutter`) - screenshot tool
 * [Rofi](https://github.com/DaveDavenport/rofi) (`rofi`) - application launcher
 * [polybar](https://github.com/jaagr/polybar) - status bar
-* [i3-gaps](https://github.com/Airblader/i3) (with `i3status`) - window manager
+* [i3-gaps](https://github.com/Airblader/i3) - window manager
 
 Required fonts:
 
