@@ -12,20 +12,37 @@ let g:tex_flavor='latex'
 " Fix backspace behaviour
 set backspace=indent,eol,start
 
-
 " Plugins like gitgutter tend to be slower with other shells like fish, so
 " we'll force Vim/NeoVim to use bash.
 set shell=/bin/bash
 
 
-" Draw color column at 80 lines
-set colorcolumn=80
+" Draw color column at 80 lines, set line length limit to be at the same point
 highlight ColorColumn ctermbg=Black
+set colorcolumn=80
+set textwidth=79
 
 
-" Make sure statusline is not inverted (to make it less intrusive)
-highlight StatusLine term=bold cterm=bold ctermfg=Black
-highlight StatusLineNC term=none cterm=none ctermfg=Black
+" Only draw colorcolumn in the current split
+function! OnWinEnter()
+    if exists('b:colorcolumn_old')
+        let &colorcolumn=b:colorcolumn_old
+    endif
+endfunction
+function! OnWinLeave()
+	let b:colorcolumn_old=&colorcolumn
+	set colorcolumn=0
+endfunction
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * call OnWinEnter()
+    autocmd WinLeave * call OnWinLeave()
+augroup END<Paste>
+
+
+" Set larger line length limit for some file types
+autocmd FileType javascript.jsx setlocal colorcolumn=120
+autocmd FileType javascript.jsx setlocal textwidth=119
 
 
 " Check matching bracket highlighting
@@ -41,6 +58,11 @@ set fillchars=vert:┃
 set fillchars+=stl:━
 set fillchars+=stlnc:━
 highlight VertSplit cterm=none ctermbg=none ctermfg=white
+
+
+" Make sure statusline is not inverted (to make it less intrusive)
+highlight StatusLine term=bold cterm=bold ctermfg=Black
+highlight StatusLineNC term=none cterm=none ctermfg=Black
 
 
 " Enable line numbers and make them very dim
