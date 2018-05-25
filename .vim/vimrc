@@ -25,13 +25,15 @@ set textwidth=79
 
 " Only draw colorcolumn in the current split
 function! OnWinEnter()
-    if exists('b:colorcolumn_old')
-        let &colorcolumn=b:colorcolumn_old
+    if exists('w:initial_cc')
+        let &colorcolumn = w:initial_cc
     endif
 endfunction
 function! OnWinLeave()
-	let b:colorcolumn_old=&colorcolumn
-	set colorcolumn=0
+    if !exists('w:initial_cc')
+        let w:initial_cc=&colorcolumn
+    endif
+    let &colorcolumn = 0
 endfunction
 augroup BgHighlight
     autocmd!
