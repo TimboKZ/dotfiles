@@ -36,6 +36,9 @@ bindsym $mod+c exec ~/.config/i3/launch-browser.sh
 bindsym --release Print exec "shutter -f"
 bindsym --release Shift+Print exec "shutter -s"
 
+# Make sure matplotlib windows always appear as floats
+for_window [class="Matplotlib" instance="matplotlib"] floating enable
+
 # Switch layouts between RU and US
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
 
