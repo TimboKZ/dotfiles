@@ -39,7 +39,7 @@ augroup BgHighlight
     autocmd!
     autocmd WinEnter * call OnWinEnter()
     autocmd WinLeave * call OnWinLeave()
-augroup END<Paste>
+augroup END
 
 
 " Set larger line length limit for some file types
