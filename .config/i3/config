@@ -19,7 +19,7 @@ exec --no-startup-id nm-applet
 # Run custom startup script
 exec --no-startup-id bash ~/.config/i3/startup.sh
 # Launch polybar
-exec --no-startup-id polybar example
+exec --no-startup-id bash ~/.config/i3/launch-polybar.sh
 
 set $mod Mod4
 
