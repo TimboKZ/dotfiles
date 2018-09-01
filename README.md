@@ -23,8 +23,8 @@ after installing i3-gaps.
 
 Required fonts:
 
-* Dina ([instructions](https://shorturl.at/EKQZ0), font archive is in `.yadm/`)
-as a font, used in urxvt and polybar.
+* Dina ([see instructions](.yadm/Dina font instructions.md) as a font, used in
+  urxvt and polybar.
 * [Siji](https://github.com/stark/siji) for icons, used in polybar.
 * FontAwesome (`fonts-font-awesome`) for icons, used in polybar.
 
