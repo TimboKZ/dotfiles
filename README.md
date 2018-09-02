@@ -27,6 +27,7 @@ Required fonts:
   urxvt and polybar.
 * [Siji](https://github.com/stark/siji) for icons, used in polybar.
 * FontAwesome (`fonts-font-awesome`) for icons, used in polybar.
+* Unifont (`unifont`), used in polybar.
 
 Optionally, you can install/use the following packages:
 
