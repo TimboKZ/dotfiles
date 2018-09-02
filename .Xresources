@@ -1,34 +1,54 @@
+#define bgDefault #0c1328
+#define bgHighlight #143447
+#define bgActive #4c7899
+
+#define textDefault #fff
+
+#define borderActive #4c7899
+
 URxvt*termName: rxvt-256color
 URxvt*scrollTtyKeypress: true
-URxvt*font: -*-dina-medium-r-*-*-13-*-*-*-*-*-*-*
-
+URxvt.font: xft:Dina-11:antialias=false, Siji:pixelsize=10
 URxvt.letterSpace: 0
 URxvt.lineSpace: 2
-
 URxvt*scrollBar: false
-
 URxvt*fading: 20
 URxvt*fadeColor: #000
-
-URxvt*foreground: white
-URxvt*background: #0c1328
-
 URxvt.internalBorder: 30 
 
-*color0:  #2E3436
-*color1:  #a40000
-*color2:  #4E9A06
-*color3:  #C4A000
-*color4:  #3465A4
-*color5:  #75507B
-*color6:  #ce5c00
-*color7:  #babdb9
-*color8:  #555753
-*color9:  #EF2929
-*color10: #8AE234
-*color11: #FCE94F
-*color12: #729FCF
-*color13: #AD7FA8
-*color14: #fcaf3e
-*color15: #EEEEEC
+! Custom colours
+polybar.background:    bgDefault
+polybar.backgroundAlt: bgHighlight
+polybar.text:          textDefault
+polybar.textAlt:       #4c7899
+polybar.border:        borderActive
+
+! Special
+*.foreground:  textDefault
+*.background:  bgDefault
+*.cursorColor: #ffffff
+! Black
+*.color0:  #2E3436
+*.color8:  #555753
+! Red
+*.color1:  #a40000
+*.color9:  #EF2929
+! Green
+*.color2:  #4E9A06
+*.color10: #8AE234
+! Yellow
+*.color3:  #C4A000
+*.color11: #FCE94F
+! Blue
+*.color4:  #3465A4
+*.color12: #729FCF
+! Magenta
+*.color5:  #75507B
+*.color13: #AD7FA8
+! Cyan
+*.color6:  #00FDFF
+*.color14: #35DFFF
+! White
+*.color7:  #babdb9
+*.color15: #EEEEEC
 
