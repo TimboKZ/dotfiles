@@ -17,7 +17,7 @@ set backspace=indent,eol,start
 set shell=/bin/bash
 
 
-" Draw color column at 80 lines, set line length limit to be at the same point
+" Draw colorcolumn at 80 lines, set line length limit to be at the same point
 highlight ColorColumn ctermbg=Black
 set colorcolumn=80
 set textwidth=79
@@ -62,7 +62,7 @@ set fillchars+=stlnc:━
 highlight VertSplit cterm=none ctermbg=none ctermfg=white
 
 
-" Make sure statusline is not inverted (to make it less intrusive)
+" Make sure status line is not inverted (to make it less intrusive)
 highlight StatusLine term=bold cterm=bold ctermfg=Black
 highlight StatusLineNC term=none cterm=none ctermfg=Black
 
@@ -70,6 +70,26 @@ highlight StatusLineNC term=none cterm=none ctermfg=Black
 " Enable line numbers and make them very dim
 set nu
 highlight LineNr ctermfg=black
+
+
+" Enable spell check and customise highlight colours
+set spell
+set spelllang=en_gb
+highlight SpellBad cterm=underline ctermfg=red ctermbg=none
+highlight SpellLocal cterm=underline ctermfg=none ctermbg=black
+highlight SpellCap cterm=bold ctermfg=none ctermbg=black
+highlight SpellRare cterm=none ctermfg=none ctermbg=black
+
+" Add mapping to fix typos
+imap <c-f> <c-g>u<Esc>1z=a<c-g>u
+nmap <c-f> 1z=<c-o><Paste>
+
+
+" Key mapping to show the highlight group under the cursor (useful for
+" debugging).
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 
 " Install vim-plug if it isn't already installed 
@@ -89,7 +109,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'lilydjwg/colorizer'
-
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 call plug#end()
 
 
