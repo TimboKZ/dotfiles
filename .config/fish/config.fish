@@ -9,3 +9,5 @@ source $OMF_PATH/init.fish
 # Aliases for NeoVim
 alias vim="nvim"
 alias vi="nvim"
+
+test -s /home/euql1n/.nvm-fish/nvm.fish; and source /home/euql1n/.nvm-fish/nvm.fish
