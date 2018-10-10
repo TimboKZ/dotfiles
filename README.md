@@ -12,10 +12,14 @@ file - you can safely decline since their configs are already included in the
 dotfiles. It is recommended that you setup yadm (i.e. `yadm clone <this repo>`)
 after installing i3-gaps.
 
-* urxvt (`rxvt-unicode-256color`) - terminal emulator
-* [NeoVim](https://github.com/neovim/neovim) (Vim works too) - text editor
-* [fish](https://fishshell.com/) - shell
-* [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - fish plugin manager
+* urxvt (`rxvt-unicode-256color`) - terminal emulator.
+* [NeoVim](https://github.com/neovim/neovim) (Vim works too) - text editor. For
+  Python support, you will need to run `pip2 install --user neovim` and `pip3
+  install --user neovim`.
+* [fish](https://fishshell.com/) - shell. For
+  [nvm](https://github.com/creationix/nvm) support in fish, you will
+  need to install [nvm-fish-wrapper](https://github.com/passcod/nvm-fish-wrapper).
+* [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - fish plugin manager.
 * [Shutter](http://shutter-project.org/) (`shutter`) - screenshot tool
 * [Rofi](https://github.com/DaveDavenport/rofi) (`rofi`) - application launcher
 * [polybar](https://github.com/jaagr/polybar) - status bar
