@@ -12,6 +12,12 @@ let g:tex_flavor='latex'
 " Fix backspace behaviour
 set backspace=indent,eol,start
 
+
+" Set offset when scrolling (so we don't need to hit the end of screen to start
+" scrolling)
+set scrolloff=8
+
+
 " Plugins like gitgutter tend to be slower with other shells like fish, so
 " we'll force Vim/NeoVim to use bash.
 set shell=/bin/bash
@@ -79,10 +85,6 @@ highlight SpellBad cterm=underline ctermfg=red ctermbg=none
 highlight SpellLocal cterm=underline ctermfg=none ctermbg=black
 highlight SpellCap cterm=bold ctermfg=none ctermbg=black
 highlight SpellRare cterm=none ctermfg=none ctermbg=black
-
-" Add mapping to fix typos
-imap <c-f> <c-g>u<Esc>1z=a<c-g>u
-nmap <c-f> 1z=<c-o><Paste>
 
 
 " Key mapping to show the highlight group under the cursor (useful for
