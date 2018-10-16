@@ -6,8 +6,10 @@ set -q XDG_DATA_HOME
 # Load Oh My Fish configuration.
 source $OMF_PATH/init.fish
 
+
 # Aliases for NeoVim
 alias vim="nvim"
 alias vi="nvim"
 
-test -s /home/euql1n/.nvm-fish/nvm.fish; and source /home/euql1n/.nvm-fish/nvm.fish
+test -s ~/anaconda3/etc/fish/conf.d/conda.fish; and source ~/anaconda3/etc/fish/conf.d/conda.fish
+test -s ~/.nvm-fish/nvm.fish; and source ~/.nvm-fish/nvm.fish
