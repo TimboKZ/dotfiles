@@ -42,6 +42,7 @@ for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Matplotlib" instance="matplotlib"] floating enable
 for_window [class="Shutter" instance="shutter"] floating enable
 for_window [class="Simplescreenrecorder" instance="simplescreenrecorder"] floating enable
+for_window [class="vlc" instance="vlc"] floating enable
 
 # Switch layouts between RU and US
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
