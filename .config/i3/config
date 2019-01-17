@@ -41,6 +41,7 @@ bindsym --release Shift+Print exec "shutter -s"
 for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Matplotlib" instance="matplotlib"] floating enable
 for_window [class="Shutter" instance="shutter"] floating enable
+for_window [class="Eog" instance="eog"] floating enable
 for_window [class="Simplescreenrecorder" instance="simplescreenrecorder"] floating enable
 for_window [class="vlc" instance="vlc"] floating enable
 
