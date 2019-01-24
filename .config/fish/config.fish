@@ -11,5 +11,8 @@ source $OMF_PATH/init.fish
 alias vim="nvim"
 alias vi="nvim"
 
-test -s ~/anaconda3/etc/fish/conf.d/conda.fish; and source ~/anaconda3/etc/fish/conf.d/conda.fish
-test -s ~/.nvm-fish/nvm.fish; and source ~/.nvm-fish/nvm.fish
+set conda_fish ~/anaconda3/etc/fish/conf.d/conda.fish
+test -s $conda_fish; and source $conda_fish
+
+set nvm_fish ~/.nvm-fish/nvm.fish
+test -s $nvm_fish; and source $nvm_fish
