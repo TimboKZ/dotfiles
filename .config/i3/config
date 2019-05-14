@@ -44,6 +44,9 @@ for_window [class="Shutter" instance="shutter"] floating enable
 for_window [class="Eog" instance="eog"] floating enable
 for_window [class="Simplescreenrecorder" instance="simplescreenrecorder"] floating enable
 for_window [class="vlc" instance="vlc"] floating enable
+for_window [title="3D render"] floating enable
+for_window [title="Calibration render"] floating enable
+for_window [title="Texture mapping visualiser"] floating enable
 
 # Switch layouts between RU and US
 exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
