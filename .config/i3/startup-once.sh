@@ -18,3 +18,9 @@ do
     xset +fp ${font}
 done
 xset fp rehash
+
+
+## Set display order
+if [ "$hostname" != "dominator" ]; then
+    xrandr --output DP-0 --left-of DP-2 --auto
+fi
