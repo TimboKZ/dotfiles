@@ -1,6 +1,6 @@
 # Tim's dotfiles
 
-Collection of dotfiles for my Ubuntu 16.04 setup. Dotfile management is done
+Collection of dotfiles for my Ubuntu 18.04 setup. Dotfile management is done
 using [yadm](https://github.com/TheLocehiliosan/yadm).
 
 # Using this repo
@@ -12,7 +12,7 @@ file - you can safely decline since their configs are already included in the
 dotfiles. It is recommended that you setup yadm (i.e. `yadm clone <this repo>`)
 after installing i3-gaps.
 
-* urxvt (`rxvt-unicode-256color`) - terminal emulator.
+* [Termite](https://computingforgeeks.com/install-termite-terminal-on-ubuntu-18-04-ubuntu-16-04-lts/) - terminal emulator.
 * [NeoVim](https://github.com/neovim/neovim) (Vim works too) - text editor. For
   Python support, you will need to run `pip2 install --user neovim` and `pip3
   install --user neovim`.
