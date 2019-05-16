@@ -20,7 +20,7 @@ URxvt.internalBorder: 30
 polybar.background:    bgDefault
 polybar.backgroundAlt: bgHighlight
 polybar.text:          textDefault
-polybar.textAlt:       #4c7899
+polybar.textAlt:       #8F2FAE
 polybar.border:        borderActive
 
 ! Special
@@ -46,9 +46,21 @@ polybar.border:        borderActive
 *.color5:  #75507B
 *.color13: #AD7FA8
 ! Cyan
-*.color6:  #00FDFF
-*.color14: #35DFFF
+*.color6:  #35DFFF
+*.color14: #00FDFF
 ! White
 *.color7:  #babdb9
 *.color15: #EEEEEC
+
+! Cursor size
+Xcursor.size: 16
+
+! Font smoothing
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
