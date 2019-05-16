@@ -17,8 +17,6 @@ after installing i3-gaps.
   Python support, you will need to run `pip2 install --user neovim` and `pip3
   install --user neovim`.
 * [fish](https://fishshell.com/) - shell. For
-  [nvm](https://github.com/creationix/nvm) support in fish, you will
-  need to install [nvm-fish-wrapper](https://github.com/passcod/nvm-fish-wrapper).
 * [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) - fish plugin manager.
 * [Shutter](http://shutter-project.org/) (`shutter`) - screenshot tool
 * [Rofi](https://github.com/DaveDavenport/rofi) (`rofi`) - application launcher
@@ -28,7 +26,7 @@ after installing i3-gaps.
 Required fonts:
 
 * Dina (see [instructions](.yadm/Dina%20font%20instructions.md)), used in
-  urxvt and polybar.
+  polybar.
 * [Siji](https://github.com/stark/siji) for icons, used in polybar.
 * FontAwesome (`fonts-font-awesome`) for icons, used in polybar.
 * Unifont (`unifont`), used in polybar.
