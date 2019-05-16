@@ -8,11 +8,11 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:polybar.background:#000}
+background = #9910021b
 background-alt = ${xrdb:polybar.backgroundAlt:#444}
 foreground = ${xrdb:polybar.foreground:#fff}
-foreground-alt = ${xrdb:polybar.textAlt:#555}
-border = ${xrdb:polybar.border:#fff}
+foreground-alt = #9751ae
+border = #9751AE
 
 primary = #ffb52a
 secondary = #e60053
@@ -30,7 +30,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #f00
+line-color = ${colors.border}
 
 padding-left = 0
 padding-right = 2
@@ -79,7 +79,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %{F#9751ae}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
