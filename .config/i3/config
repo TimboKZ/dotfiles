@@ -79,6 +79,7 @@ for_window [class="Eog" instance="eog"] floating enable
 for_window [class="JetBrains Toolbox"] floating enable
 for_window [class="Simplescreenrecorder" instance="simplescreenrecorder"] floating enable
 for_window [class="vlc" instance="vlc"] floating enable
+for_window [class="ogma"] floating enable
 for_window [title="3D render"] floating enable
 for_window [title="Calibration render"] floating enable
 for_window [title="Texture mapping visualiser"] floating enable
