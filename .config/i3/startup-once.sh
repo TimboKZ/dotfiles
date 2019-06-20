@@ -21,7 +21,7 @@ xset fp rehash
 
 
 ## Set display order
-if [ "$hostname" != "dominator" ]; then
+if [ "$HOSTNAME" == "dominator" ]; then
     xrandr --output DP-0 --left-of DP-2 --auto
 fi
 
