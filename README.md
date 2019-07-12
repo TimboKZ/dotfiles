@@ -6,7 +6,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 # Shell
 
 * `fish` shell.
-* `konsole` terminal emulator.
+* `konsole` terminal emulator. `FiraProf` profile needs to be enabled after setup.
 * `neovim` editor.
 
 # GUI
@@ -19,6 +19,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 # Other
 
 * `shutter` screenshot tool.
+* `otf-fire-code` console font.
 
 # Autostart
 
