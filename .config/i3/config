@@ -1,0 +1,165 @@
+###############################################################################
+#
+#  Startup logic
+#
+###############################################################################
+
+set $mod Mod4
+
+# Bind workspaces to monitors
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-2
+workspace 4 output DP-2
+
+# Run programs
+bindsym --release $mod+Return exec "konsole"
+bindsym --release $mod+Shift+Return exec "konsole --name=floating"
+bindsym $mod+c exec ~/.config/i3/launch-browser.sh
+bindsym --release Print exec "shutter -f"
+bindsym --release Shift+Print exec "shutter -s"
+
+# Switch layouts between RU and US
+exec --no-startup-id "setxkbmap -model pc105 -layout us,ru -option grp:alt_shift_toggle"
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 in place (preserves your layout/session)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Pulse Audio audio and brightness keyboard controls
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master '5%+'"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
+bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause" 
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+
+
+
+###############################################################################
+#
+#  Appearance settings
+#
+###############################################################################
+
+# Setup gaps and border
+gaps inner 30
+for_window [class=".*"] border pixel 2
+
+# Set colours
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #b767d1   #8f2fae
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
+# Make sure some windows always appear as floats
+for_window [class="krunner"] border none
+for_window [class="Shutter"] floating enable
+for_window [class="JetBrains Toolbox"] floating enable
+for_window [class="Simplescreenrecorder"] floating enable
+for_window [class="vlc"] floating enable
+for_window [class="ogma"] floating enable
+
+# Setup for KDE Plasma
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px, no_focus
+
+
+
+
+###############################################################################
+#
+#  i3 key bindings, rarely changed
+#
+###############################################################################
+
+floating_modifier $mod
+
+# Split in horizontal orientation
+bindsym $mod+Shift+b split h
+# Split in vertical orientation
+bindsym $mod+Shift+n split v
+# Kill focused window
+bindsym $mod+w kill
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+Shift+f fullscreen toggle
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+u layout stacking
+bindsym $mod+i layout tabbed
+bindsym $mod+o layout toggle split
+# Toggle tiling / floating
+bindsym $mod+f floating toggle
+# Change focus between tiling / floating windows
+bindsym $mod+Tab focus mode_toggle
+
+# Changing focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Moving focused windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Defining workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+
+# Window resizing
+mode "resize" {
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
