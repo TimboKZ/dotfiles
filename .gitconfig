@@ -1,0 +1,7 @@
+[user]
+	email = tim.kuzh@gmail.com
+	name = Tim Kuzhagaliyev
+[core]
+	editor = vim
+[push]
+	default = simple
