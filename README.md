@@ -7,6 +7,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 
 * `fish` shell.
 * `konsole` terminal emulator.
+* `neovim` editor.
 
 # GUI
 

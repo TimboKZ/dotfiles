@@ -2,6 +2,6 @@
 	email = tim.kuzh@gmail.com
 	name = Tim Kuzhagaliyev
 [core]
-	editor = vim
+	editor = nvim
 [push]
 	default = simple
