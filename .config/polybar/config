@@ -1,0 +1,180 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+background = #9910021b
+background-active = #591f6d
+foreground = #fff
+foreground-alt = #9751ae
+border = #591f6d
+urgent-workspace = #bd2c40
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/base]
+monitor = ${env:MONITOR:}
+scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+fixed-center = false
+font-0 = "Open Sans:size=11;0"
+font-1 = FontAwesome5Free:style=Solid:size=11;1
+font-2 = FontAwesome5Free:style=Regular:size=11;1
+font-3 = FontAwesome5Brands:style=Regular:size=11;1
+font-4 = Symbola:style=Regular:size=11;1
+background = ${colors.background}
+foreground = ${colors.foreground}
+module-margin = 2
+width = 100%
+height = 30
+
+[bar/top]
+inherit = bar/base
+include-file = ~/.config/polybar/top
+
+[bar/bottom]
+inherit = bar/base
+include-file = ~/.config/polybar/bottom
+
+[module/i3]
+type = internal/i3
+base-padding = 2
+index-sort = true
+pin-workspaces = true
+wrapping-scroll = false
+label-mode-foreground = ${colors.foreground}
+label-mode-background = ${colors.primary}
+label-mode-padding = ${self.base-padding}
+label-focused = %index%
+label-focused-background = ${colors.background-active}
+label-focused-padding = ${self.base-padding}
+label-focused-underline =
+label-unfocused = %index%
+label-unfocused-padding = ${self.base-padding}
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-padding = ${self.label-focused-padding}
+label-visible-underline = 
+label-urgent = %index%
+label-urgent-background = ${colors.urgent-workspace}
+label-urgent-padding = ${self.label-focused-padding}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:300:...%
+format-underline = ${colors.border}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-spacing = 0
+label-layout = %name%
+label-layout-padding = 1
+label-indicator = %name%
+label-indicator-padding = 2
+label-indicator-background = ${colors.background-active}
+
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+format-volume = %{F#9751ae}<ramp-volume>%{F-}  <label-volume>
+label-muted = 🔇 Muted
+label-muted-foreground = ${colors.foreground-alt}
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+[module/date]
+type = internal/date
+interval = 20
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+date = %Y-%m-%d
+label = %date%
+
+[module/time]
+type = internal/date
+interval = 5.0
+format-prefix = "  "
+format-prefix-foreground = ${colors.foreground-alt}
+time = %H:%M
+label = %time%
+
+[module/filesystem]
+type = internal/fs
+interval = 15
+mount-0 = /
+mount-1 = /mnt/Newton
+mount-2 = /mnt/Tesla
+fixed-values = true
+label-mounted = "%{F#9751ae}  %mountpoint%:%{F-} %used%%{F#9751ae}, %free% left%{F-}      "
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/wireless]
+type = internal/network
+interval = 5
+interface = wlp6s0
+label-connected = %{F#9751ae}%{F-}  %essid% %{F#9751ae}%local_ip%%{F-}     %{F#9751ae}%{F-}  %upspeed%     %{F#9751ae}%{F-}  %downspeed%
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = "CPU: "
+format-prefix-foreground = ${colors.foreground-alt}
+format = <label> <ramp-coreload>
+label = 
+ramp-coreload-spacing = 1
+ramp-coreload-0 = %{F#CCFF00}▁%{F-}
+ramp-coreload-1 = %{F#CCE800}▂%{F-}
+ramp-coreload-2 = %{F#CCD100}▃%{F-}
+ramp-coreload-3 = %{F#CCB900}▄%{F-}
+ramp-coreload-4 = %{F#CCA200}▅%{F-}
+ramp-coreload-5 = %{F#CC7400}▆%{F-}
+ramp-coreload-6 = %{F#CC5D00}▇%{F-}
+ramp-coreload-7 = %{F#CC4600}█%{F-}
+
+[module/system-nvidia-smi]
+type = custom/script
+exec = ~/.config/polybar/system-nvidia-smi.sh
+exec-if = command -v nvidia-smi
+interval = 3
+format-prefix = "GPU: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %output%%
+
+[module/memory]
+type = internal/memory
+interval = 3
+format-prefix = "RAM: "
+format-prefix-foreground = ${colors.foreground-alt}
+label = %gb_used%%{F#9751ae}, %gb_total% total%{F-}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+format-warn-underline = #f50a4d
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+ramp-0 = TEMP:
+ramp-1 = TEMP:
+ramp-2 = TEMP:
+ramp-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini

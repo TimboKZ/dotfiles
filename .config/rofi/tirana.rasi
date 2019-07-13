@@ -4,7 +4,7 @@
     background-color: @transparent;
     transparent: rgba(0, 0, 0, 0);
     font: "Fira Code 30";
-    color: #614dc1;
+    color: #8f2fae;
     spacing: 10;
 }
 

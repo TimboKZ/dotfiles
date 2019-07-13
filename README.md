@@ -19,15 +19,8 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 # Other
 
 * `shutter` screenshot tool.
-* `otf-fire-code` console font.
+* `otf-fira-code` console font.
 * `ttf-opensans` font for app launcher.
 * `ttf-ms-fonts` fonts for general use.
-
-# Autostart
-
-The following programs and scripts must be added to Plasma's Autostart (in "before session startup" mode):
-* `shutter`
-* `~/.yadm/startup.sh`
-* `~/.yadm/kde-i3.sh`
-* `~/.yadm/launch-compton.sh`
+* `ttf-font-awesome`, `ttf-symbola` for icons.
 

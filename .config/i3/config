@@ -15,6 +15,7 @@ workspace 4 output DP-0
 # Run startup scripts
 exec --no-startup-id bash ~/.config/i3/startup-once.sh
 exec_always --no-startup-id bash ~/.config/i3/launch-compton.sh
+exec_always --no-startup-id bash ~/.config/i3/launch-polybar.sh
 
 # Run programs
 bindsym --release $mod+space exec "~/.config/i3/launch-rofi.sh"
@@ -56,21 +57,8 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 ###############################################################################
 
 # Setup gaps and border
-gaps outer 20
-gaps inner 40
+gaps inner 20
 for_window [class=".*"] border pixel 3
-
-# The bar
-bar {
-  position top
-  tray_output primary
-  font pango:Fire Code 9
-  status_command i3blocks
-
-  colors {
-    background #221027
-  }
-}
 
 # Set colours
 # class                 border  backgr. text    indicator child_border
