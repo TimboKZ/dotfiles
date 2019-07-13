@@ -1,5 +1,5 @@
 [Background]
-Color=15,25,47
+Color=29,14,43
 
 [BackgroundFaint]
 Color=15,25,47
@@ -91,5 +91,5 @@ Color=255,255,255
 [General]
 Blur=false
 Description=Breeze
-Opacity=0.96
+Opacity=0.98
 Wallpaper=
