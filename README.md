@@ -16,7 +16,8 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 
 * `lightdm` display manager with `lightdm-webkit2-greeter`.
 * `i3-gaps` window manager (doubles as a DE).
-* `xlunch` application launcher. Might require `LXAppearance` to set the GTK theme before it can build.
+* `rofi` application launcher.
+* `polybar` status bar.
 
 # Other
 
