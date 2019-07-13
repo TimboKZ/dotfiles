@@ -5,21 +5,21 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 
 # Shell
 
-* `fish` shell.
+* `fish` shell with `fisher` package manager.
 * `konsole` terminal emulator. `FiraProf` profile needs to be enabled after setup.
 * `neovim` editor.
 
 # GUI
 
 * `lightdm` display manager with `lightdm-webkit2-greeter`.
-* KDE Plasma desktop environment via `plasma` group.
-* `i3-gaps` window manager.
-* `krunner` app launcher (comes with Plasma).
+* `i3-gaps` window manager (doubles as a DE).
+* `xlunch` application launcher. Might require `LXAppearance` to set the GTK theme before it can build.
 
 # Other
 
 * `shutter` screenshot tool.
 * `otf-fire-code` console font.
+* `ttf-opensans` font for app launcher.
 
 # Autostart
 
