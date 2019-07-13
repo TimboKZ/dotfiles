@@ -17,7 +17,7 @@ exec --no-startup-id bash ~/.config/i3/startup-once.sh
 exec_always --no-startup-id bash ~/.config/i3/launch-compton.sh
 
 # Run programs
-bindsym --release $mod+space exec "xlunch -f OpenSans-Regular/10 -bc #221027ee"
+bindsym --release $mod+space exec "rofi -show run -modi run,window -show-icons -sidebar-mode -terminal st"
 bindsym --release $mod+Return exec "konsole"
 bindsym --release $mod+Shift+Return exec "konsole --name=floating"
 bindsym $mod+c exec ~/.config/i3/launch-browser.sh
@@ -55,8 +55,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 ###############################################################################
 
 # Setup gaps and border
-gaps inner 30
-for_window [class=".*"] border pixel 2
+gaps outer 20
+gaps inner 20
+for_window [class=".*"] border pixel 0
 
 # The bar
 bar {

@@ -75,7 +75,7 @@ highlight StatusLineNC term=none cterm=none ctermfg=Black
 
 " Enable line numbers and make them very dim
 set nu
-highlight LineNr ctermfg=black
+highlight LineNr term=bold cterm=bold ctermfg=black
 
 
 " Enable spell check and customise highlight colours

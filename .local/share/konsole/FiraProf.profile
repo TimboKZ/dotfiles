@@ -12,7 +12,7 @@ Name=FiraProf
 Parent=FALLBACK/
 ShowTerminalSizeHint=false
 TerminalCenter=true
-TerminalMargin=20
+TerminalMargin=30
 
 [Scrolling]
 ScrollBarPosition=2
