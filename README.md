@@ -8,6 +8,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 * `fish` shell with `fisher` package manager.
 * `konsole` terminal emulator. `FiraProf` profile needs to be enabled after setup.
 * `neovim` editor.
+* `yay` AUR helper.
 
 # GUI
 
@@ -20,6 +21,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 * `shutter` screenshot tool.
 * `otf-fire-code` console font.
 * `ttf-opensans` font for app launcher.
+* `ttf-ms-fonts` fonts for general use.
 
 # Autostart
 
