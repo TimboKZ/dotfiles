@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=true
-ColorScheme=Dom
+ColorScheme=Tirana
 Font=Fira Code Light,9,-1,5,25,0,0,0,0,0,Regular
 LineSpacing=1
 UseFontLineChararacters=true

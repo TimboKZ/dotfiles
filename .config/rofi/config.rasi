@@ -1,0 +1,6 @@
+configuration {
+    sidebar-mode: true;
+    matching: "fuzzy";
+    fullscreen: true;
+    theme: "tirana";
+}
