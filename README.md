@@ -3,6 +3,8 @@
 Collection of dotfiles for my Arch Linux setup. Dotfile management is done
 using [yadm](https://github.com/TheLocehiliosan/yadm).
 
+![Dominator Arch Linux screenshot](.assets/desktop.jpg)
+
 # Shell
 
 * `fish` shell with `fisher` package manager.
