@@ -3,9 +3,9 @@
 
     background-color: @transparent;
     transparent: rgba(0, 0, 0, 0);
-    font: "Fira Code 20";
+    font: "Fira Code 30";
+    color: #614dc1;
     spacing: 10;
-    color: #a9bce2;
 }
 
 #window {
@@ -15,8 +15,24 @@
 }
 
 #mainbox {
-    padding: 30%;
+    padding: 40% 30% 10% 30%;
     border: 0;
+}
+
+#entry {
+    color: #a397dd;
+}
+
+#listview {
+    padding: 10px 0 0 0;
+}
+
+#element {
+    font: "Fira Code 20";
+}
+
+#element.selected {
+    text-color: #c5bdea;
 }
 
 /* vim:ft=css
