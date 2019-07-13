@@ -1,0 +1,118 @@
+" Setup indentation with 4 spaces for tabs
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+
+" By default .tex files have plain TeX flavour. Change this to LaTeX.
+let g:tex_flavor='latex'
+
+
+" Fix backspace behaviour
+set backspace=indent,eol,start
+
+
+" Set offset when scrolling (so we don't need to hit the end of screen to start
+" scrolling)
+set scrolloff=8
+
+
+" Plugins like gitgutter tend to be slower with other shells like fish, so
+" we'll force Vim/NeoVim to use bash.
+set shell=/bin/bash
+
+
+" Draw colorcolumn at 80 lines, set line length limit to be at the same point
+highlight ColorColumn ctermbg=Black
+set colorcolumn=80
+set textwidth=79
+
+
+" Only draw colorcolumn in the current split
+function! OnWinEnter()
+    if exists('w:initial_cc')
+        let &colorcolumn = w:initial_cc
+    endif
+endfunction
+function! OnWinLeave()
+    if !exists('w:initial_cc')
+        let w:initial_cc=&colorcolumn
+    endif
+    let &colorcolumn = 0
+endfunction
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * call OnWinEnter()
+    autocmd WinLeave * call OnWinLeave()
+augroup END
+
+
+" Set larger line length limit for some file types
+autocmd FileType javascript.jsx setlocal colorcolumn=120
+autocmd FileType javascript.jsx setlocal textwidth=119
+
+
+" Check matching bracket highlighting
+highlight MatchParen cterm=none ctermbg=magenta ctermfg=black
+
+
+" Set Search highlight color
+highlight Search cterm=none ctermbg=black ctermfg=magenta
+
+
+" Change split separator symbol and color to make it less intrusive
+set fillchars=vert:┃
+set fillchars+=stl:━
+set fillchars+=stlnc:━
+highlight VertSplit cterm=none ctermbg=none ctermfg=white
+
+
+" Make sure status line is not inverted (to make it less intrusive)
+highlight StatusLine term=bold cterm=bold ctermfg=Black
+highlight StatusLineNC term=none cterm=none ctermfg=Black
+
+
+" Enable line numbers and make them very dim
+set nu
+highlight LineNr ctermfg=black
+
+
+" Enable spell check and customise highlight colours
+set spell
+set spelllang=en_gb
+highlight SpellBad cterm=underline ctermfg=red ctermbg=none
+highlight SpellLocal cterm=underline ctermfg=none ctermbg=black
+highlight SpellCap cterm=bold ctermfg=none ctermbg=black
+highlight SpellRare cterm=none ctermfg=none ctermbg=black
+
+
+" Key mapping to show the highlight group under the cursor (useful for
+" debugging).
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+
+" Install vim-plug if it isn't already installed 
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+
+" vim-plug plugins
+call plug#begin('~/.vim/plugged')
+
+Plug 'w0rp/ale'
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'lilydjwg/colorizer'
+call plug#end()
+
+
+" Set Ale color scheme
+highlight ALEError ctermbg=red
+
