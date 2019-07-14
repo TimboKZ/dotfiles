@@ -29,3 +29,12 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 * `ttf-ms-fonts` fonts for general use.
 * `ttf-font-awesome`, `ttf-symbola` for icons.
 
+# Notes
+
+These lines should be added to `/etc/profile`:
+```bash
+appendpath "/home/$USER/.local/bin"
+SUDO_EDITOR=/usr/bin/nvim
+export SUDO_EDITOR
+```
+

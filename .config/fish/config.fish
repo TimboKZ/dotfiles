@@ -5,9 +5,6 @@ if not functions -q fisher
     fish -c fisher
 end
 
-# Add ~/.local/bin to path
-set PATH ~/.local/bin $PATH
-
 # Aliases for NeoVim
 alias vim="nvim"
 alias vi="nvim"
