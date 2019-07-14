@@ -22,6 +22,8 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 # Other
 
 * `shutter` screenshot tool.
+* `pulseaudio` for sound control, with `pulseaudio-alsa`.
+* `mopidy` for music, with `mpc` package to enable keyboard media keys.
 * `otf-fira-code` console font.
 * `ttf-opensans` font for app launcher.
 * `ttf-ms-fonts` fonts for general use.

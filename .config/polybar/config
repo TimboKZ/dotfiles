@@ -36,11 +36,28 @@ height = 30
 
 [bar/top]
 inherit = bar/base
-include-file = ~/.config/polybar/top
+bottom = false
+border-bottom-size = 3
+border-bottom-color = ${colors.border}
+tray-position = right
+tray-padding = 2
+padding-right = 1
+modules-left = i3 mpd
+modules-center = xwindow
+modules-right = xkeyboard pulseaudio date time
 
 [bar/bottom]
 inherit = bar/base
-include-file = ~/.config/polybar/bottom
+bottom = true
+border-top-size = 3
+border-top-color = ${colors.border}
+tray-position = none
+padding-left = 2
+padding-right = 2
+module-margin-left = 4
+modules-left = filesystem
+modules-center = wireless
+modules-right = cpu system-nvidia-smi memory temperature
 
 [module/i3]
 type = internal/i3
@@ -70,6 +87,84 @@ type = internal/xwindow
 label = %title:0:300:...%
 format-underline = ${colors.border}
 
+[module/mpd]
+type = internal/mpd
+interval = 1
+host = 127.0.0.1
+port = 6600
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone> (deprecated)
+;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
+;   <icon-consume>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+format-online = <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
+;format-playing = ${self.format-online}
+;format-paused = ${self.format-online}
+;format-stopped = ${self.format-online}
+
+; Available tags:
+;   <label-offline>
+; Default: ""
+;format-offline = <label-offline>
+
+; Available tokens:
+;   %artist%
+;   %album-artist%
+;   %album%
+;   %date%
+;   %title%
+; Default: %artist% - %title%
+label-song = 𝄞 %artist% - %title%
+
+; Available tokens:
+;   %elapsed%
+;   %total%
+; Default: %elapsed% / %total%
+;label-time = %elapsed% / %total%
+
+; Available tokens:
+;   None
+label-offline = 🎜 mpd is offline
+
+; Only applies if <icon-X> is used
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
+icon-seekb = ⏪
+icon-seekf = ⏩
+icon-random = 🔀
+icon-repeat = 🔁
+icon-repeatone = 🔂
+icon-single = 🔂
+icon-consume = ✀
+
+; Used to display the state of random/repeat/repeatone/single
+; Only applies if <icon-[random|repeat|repeatone|single]> is used
+toggle-on-foreground = #ff
+toggle-off-foreground = #55
+
+; Only applies if <bar-progress> is used
+bar-progress-width = 45
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
 [module/xkeyboard]
 type = internal/xkeyboard
 format-prefix = " "
@@ -81,17 +176,10 @@ label-indicator = %name%
 label-indicator-padding = 2
 label-indicator-background = ${colors.background-active}
 
-[module/alsa]
-type = internal/alsa
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
-format-volume = %{F#9751ae}<ramp-volume>%{F-}  <label-volume>
-label-muted = 🔇 Muted
-label-muted-foreground = ${colors.foreground-alt}
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
 
 [module/date]
 type = internal/date
@@ -132,7 +220,7 @@ interval = 1
 format-prefix = "CPU: "
 format-prefix-foreground = ${colors.foreground-alt}
 format = <label> <ramp-coreload>
-label = 
+label = %percentage%%
 ramp-coreload-spacing = 1
 ramp-coreload-0 = %{F#CCFF00}▁%{F-}
 ramp-coreload-1 = %{F#CCE800}▂%{F-}
@@ -166,8 +254,8 @@ warn-temperature = 60
 format = <ramp> <label>
 format-warn = <ramp> <label-warn>
 format-warn-underline = #f50a4d
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 ramp-0 = TEMP:
 ramp-1 = TEMP:
