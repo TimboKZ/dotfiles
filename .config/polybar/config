@@ -43,7 +43,7 @@ border-bottom-color = ${colors.border}
 tray-position = right
 tray-padding = 2
 padding-right = 1
-modules-left = i3 mpd
+modules-left = i3 spotify
 modules-center = xwindow
 modules-right = pulseaudio xkeyboard date time
 
@@ -83,67 +83,18 @@ label-urgent = %index%
 label-urgent-background = ${colors.urgent-workspace}
 label-urgent-padding = ${self.label-focused-padding}
 
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = ~/.config/polybar/spotify.sh
+click-left = i3-msg '[class="Spotify"] focus'
+
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:300:...%
+label = %title:0:100:...%
 format-underline = ${colors.border}
-
-[module/mpd]
-type = internal/mpd
-interval = 1
-host = 127.0.0.1
-port = 6600
-
-; Available tags:
-;   <label-song> (default)
-;   <label-time>
-;   <bar-progress>
-;   <toggle> - gets replaced with <icon-(pause|play)>
-;   <toggle-stop> - gets replaced with <icon-(stop|play)>
-;   <icon-random>
-;   <icon-repeat>
-;   <icon-repeatone> (deprecated)
-;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
-;   <icon-consume>
-;   <icon-prev>
-;   <icon-stop>
-;   <icon-play>
-;   <icon-pause>
-;   <icon-next>
-;   <icon-seekb>
-;   <icon-seekf>
-format-online = <icon-prev> <toggle> <icon-next>  <icon-repeat> <icon-random>     <bar-progress> <label-time>     <label-song>
-label-song =   %title%   %{F#9751ae}  %album-artist%%{F-}
-label-time = %{F#9751ae}%elapsed% / %total%%{F-}
-
-; Only applies if <icon-X> is used
-icon-play = ⏵
-icon-pause = ⏸
-icon-stop = ⏹
-icon-prev = ⏮
-icon-next = ⏭
-icon-seekb = ⏪
-icon-seekf = ⏩
-icon-random = 🔀
-icon-repeat = 🔁
-icon-repeatone = 🔂
-icon-single = 🔂
-icon-consume = ✀
-
-; Used to display the state of random/repeat/repeatone/single
-; Only applies if <icon-[random|repeat|repeatone|single]> is used
-toggle-on-foreground = #ff
-toggle-off-foreground = #55
-
-; Only applies if <bar-progress> is used
-bar-progress-width = 15
-bar-progress-indicator = 
-bar-progress-fill = ─
-bar-progress-fill-font = 5
-bar-progress-fill-foreground = #55aa55
-bar-progress-empty = ─
-bar-progress-empty-font = 5
-bar-progress-empty-foreground = ${colors.fg-alt}
 
 [module/pulseaudio]
 type = internal/pulseaudio
