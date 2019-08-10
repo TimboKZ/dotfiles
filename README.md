@@ -22,6 +22,7 @@ using [yadm](https://github.com/TheLocehiliosan/yadm).
 # Other
 
 * `shutter` screenshot tool.
+* `parcellite` clipboard manager.
 * `pulseaudio` for sound control, with `pulseaudio-alsa`.
 * `mopidy` for music, with `mpc` package to enable keyboard media keys.
 * `otf-fira-code` console font.
