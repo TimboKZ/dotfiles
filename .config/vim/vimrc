@@ -54,7 +54,7 @@ autocmd FileType javascript.jsx setlocal textwidth=119
 
 
 " Check matching bracket highlighting
-highlight MatchParen cterm=none ctermbg=magenta ctermfg=black
+highlight MatchParen cterm=none ctermbg=magenta ctermfg=white
 
 
 " Set Search highlight color
