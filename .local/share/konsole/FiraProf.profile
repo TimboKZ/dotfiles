@@ -2,8 +2,8 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=Tirana
-Font=Fira Code Light,9,-1,5,25,0,0,0,0,0,Regular
-LineSpacing=1
+Font=DejaVu Sans Mono,9,-1,5,50,0,0,0,0,0,Book
+LineSpacing=0
 UseFontLineChararacters=true
 
 [Cursor Options]
