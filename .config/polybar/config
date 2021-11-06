@@ -24,11 +24,10 @@ scroll-down = i3wm-wsprev
 scroll-up = i3wm-wsnext
 fixed-center = false
 font-0 = "Open Sans:size=11;0"
-font-1 = FontAwesome5Free:style=Solid:size=11;1
-font-2 = FontAwesome5Free:style=Regular:size=11;1
-font-3 = FontAwesome5Brands:style=Regular:size=11;1
-font-4 = Symbola:style=Regular:size=11;1
-font-5 = "Fira Code:size=11;0"
+font-1 = FontAwesome:style=Solid:size=11;1
+font-2 = Symbola:style=Regular:size=11;1
+font-3 = Siji:style=Regular:size=11;1
+font-4 = "Fira Code:size=11;0"
 background = ${colors.background}
 foreground = ${colors.foreground}
 module-margin = 2
@@ -86,7 +85,6 @@ label-urgent-padding = ${self.label-focused-padding}
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = " "
 format = <label>
 exec = ~/.config/polybar/spotify.sh
 click-left = i3-msg '[class="Spotify"] focus'

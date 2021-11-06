@@ -8,16 +8,9 @@ URxvt*fading: 20
 URxvt*fadeColor: #000
 URxvt.internalBorder: 30 
 
-! Custom colours
-polybar.background:    #0c1328
-polybar.backgroundAlt: #143447
-polybar.text:          #fff
-polybar.textAlt:       #8F2FAE
-polybar.border:        #4c7899
-
 ! Special
-*.foreground:  #fff
-*.background:  #0c1328
+*.foreground:  #ffffff
+*.background:  #3c154a
 *.cursorColor: #ffffff
 ! Black
 *.color0:  #2E3436

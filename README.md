@@ -1,6 +1,7 @@
 # Tim's Ubuntu 18.04 dotfiles
 
-Dotfiles meant to be used with [yadm](https://github.com/TheLocehiliosan/yadm) dotfile manager.
+Dotfiles meant to be used with [yadm](https://github.com/TheLocehiliosan/yadm)
+dotfile manager.
 
 ## Packages
 
@@ -18,9 +19,14 @@ Dotfiles meant to be used with [yadm](https://github.com/TheLocehiliosan/yadm) d
 ### Other
 * `shutter` screenshot tool.
 * `parcellite` clipboard manager.
+* `feh` image viewer.
+* `open-sans` font.
+* `firacode` font.
+* `dina` bitmap font (instructions in `.yadm/` folder).
+* `unifont` bitmap font.
 * `siji` icon font ([instructions](https://github.com/stark/siji)).
+* `symbola` icon font.
 * `fonts-font-awesome` icon font.
-* `unifont` font.
 
 
 ## Install 'em all
@@ -42,6 +48,9 @@ sudo apt install \
     polybar \
     shutter \
     parcellite \
-    fonts-font-awesome \
-    unifont
+    feh \
+    fonts-open-sans \
+    fonts-firacode \
+    unifont \
+    fonts-font-awesome
 ```

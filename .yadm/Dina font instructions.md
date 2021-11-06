@@ -12,13 +12,13 @@ To get `dina` font working you'll need to carry out these steps:
     ```
     cd ~/.yadm
     tar -xzf Dina-PCF.tar.gz
-    sudo mkdir -p /usr/share/fonts
-    sudo mv Dina-PCF /usr/share/fonts/dina
+    mkdir -p ~/.fonts
+    cp Dina-PCF/* ~/.fonts
     ```
 
 3. Install the font:
     ```
-    cd /usr/share/fonts/dina
+    cd ~/.fonts
     mkfontdir
     xset fp rehash
     fc-cache -f

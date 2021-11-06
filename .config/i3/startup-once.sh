@@ -5,14 +5,23 @@ if [ -f ~/.fehbg ]; then
     sh ~/.fehbg
 fi
 
-## Run shutter
+# Ubuntu specific apps
+nm-applet &
+
+# Initialise fonts (separate fonts with a space)
+xset +fp ~/.fonts
+xset fp rehash
+
+# Run shutter
 shutter --min_at_startup &
 
-## Run parcellite
+# Run parcellite
 parcellite -d &
 
-## Set display order
-if [ "$HOSTNAME" == "dominator" ]; then
-    xrandr --output DP-0 --right-of DP-2 --auto
+# Set display order
+if [ "$(hostname)" == "Dominator" ]; then
+    xrandr --output DP-2 --mode 5120x1440
+    xrandr --output DP-4 --mode 5120x1440
+    xrandr --output DP-4 --top-of DP-2
 fi
 

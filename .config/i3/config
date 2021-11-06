@@ -9,19 +9,22 @@ set $mod Mod4
 # Bind workspaces to monitors
 workspace 1 output DP-2
 workspace 2 output DP-2
-workspace 3 output DP-0
-workspace 4 output DP-0
+workspace 3 output DP-4
+workspace 4 output DP-4
 
 # Run startup scripts
 exec --no-startup-id bash ~/.config/i3/startup-once.sh
-exec_always --no-startup-id bash ~/.config/i3/launch-picom.sh
+#exec_always --no-startup-id bash ~/.config/i3/launch-picom.sh
 exec_always --no-startup-id bash ~/.config/i3/launch-polybar.sh
+
+# For authentication agent
+exec --no-startup-id lxpolkit
 
 # Run programs
 bindsym --release $mod+space exec "~/.config/i3/launch-rofi.sh"
-bindsym --release $mod+Return exec "konsole"
-bindsym --release $mod+n exec "Thunar"
-bindsym --release $mod+Shift+Return exec "~/.config/i3/float-runner.sh konsole"
+bindsym --release $mod+Return exec "urxvt"
+bindsym --release $mod+n exec "nautilus"
+bindsym --release $mod+Shift+Return exec "urxvt -name floating"
 bindsym $mod+c exec "~/.config/i3/launch-browser.sh"
 bindsym --release Print exec "shutter -f"
 bindsym --release $mod+Shift+s exec "shutter -s"
@@ -58,7 +61,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
 # Setup gaps and border
 gaps inner 20
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 
 # Set colours
 # class                 border  backgr. text    indicator child_border
@@ -70,6 +73,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # Make sure some windows always appear as floats
+for_window [class="URxvt" instance="floating"] floating enable
 for_window [class="Shutter"] floating enable
 for_window [class="JetBrains Toolbox"] floating enable
 for_window [class="Simplescreenrecorder"] floating enable

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 script_path=~/.config/polybar/spotify_status.py
 prefix="%{{F#9751ae}}  {play_pause}%{{F-}}"
 artist="%{{F#9751ae}}  {artist}%{{F-}}"
